@@ -25,7 +25,7 @@ public class ReverseProxyFrontendRule {
 	public boolean matches(HttpRequest request) {
 		if (this.pathPrefix != null && request.getUri().startsWith(this.pathPrefix)) {
 			if (removePrefix) {
-				// if the request URI is "http://intuitics.com/dev/" cut only "/dev", because the prefix is "/dev/" (with a slash in the end)
+				// if the request URI is "http://google.com/dev/" cut only "/dev", because the prefix is "/dev/" (with a slash in the end)
 				String removedPrefix = request.getUri().substring(this.pathPrefix.length() - 1);
 				request.setUri(removedPrefix);
 			}
